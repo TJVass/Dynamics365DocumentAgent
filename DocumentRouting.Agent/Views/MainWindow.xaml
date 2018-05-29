@@ -1,0 +1,112 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Microsoft.Dynamics.AX.Framework.DocumentRouting"
+        x:Class="Microsoft.Dynamics.AX.Framework.DocumentRouting.MainWindow"
+        ResizeMode="CanResize"
+        mc:Ignorable="d" Width="640" Height="480"
+        Title="{x:Static local:StringResources.DocumentRoutingAgentTitle}">
+    <Window.Resources>
+        <Style TargetType="StatusBar" x:Key="StatusBarTextBlock">
+            <Style.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="TextWrapping" Value="NoWrap" />
+                    <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+                    <Setter Property="Padding" Value="2,0" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="StatusBarStatusTextBlock">
+            <Setter Property="Text" Value="" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Status}" Value="Waiting">
+                    <Setter Property="Text" Value="{x:Static local:StringResources.WaitingForNextDocument}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Checking">
+                    <Setter Property="Text" Value="{x:Static local:StringResources.CheckingForNextDocument}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Routing">
+                    <Setter Property="Text" Value="{x:Static local:StringResources.CheckingForNextDocument}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="SigningIn">
+                    <Setter Property="Text" Value="{x:Static local:StringResources.SigningIn}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="SignedIn">
+                    <Setter Property="Text" Value="{x:Static local:StringResources.SignedIn}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="SignedOut">
+                    <Setter Property="Text" Value="{x:Static local:StringResources.NotSignedIn}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="UnableToSignIn">
+                    <Setter Property="Text" Value="{x:Static local:StringResources.UnableToSignIn}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="NoActivePrinters">
+                    <Setter Property="Text" Value="{x:Static local:StringResources.NoActivePrinters}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="WaitingToClose">
+                    <Setter Property="Text" Value="{x:Static local:StringResources.WindowIsWaitingToClose}" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <local:BooleanToVisibilityConverter x:Key="BooleanToCollapsedConverter" TrueValue="Collapsed" FalseValue="Visible"/>
+    </Window.Resources>
+    <Grid Name="MainWindowGrid">
+        <Grid.RowDefinitions>
+            <!-- Menu buttons here -->
+            <RowDefinition Height="Auto" />
+            <!-- Status data grid here -->
+            <RowDefinition Height="*" />
+            <!-- Status bar here -->
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical">
+            <!-- Menu buttons -->
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="SignIn"
+                        Visibility="{Binding IsSignedIn, Converter={StaticResource BooleanToCollapsedConverter}}" 
+                        Content="{x:Static local:StringResources.SignInLabel}"
+                        Command="{Binding SignInCommand}"
+                        Width="90" 
+                        BorderThickness="0"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}" />
+                <Button x:Name="SignOut"
+                        Visibility="{Binding IsSignedIn, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Content="{x:Static local:StringResources.SignOutLabel}"
+                        Command="{Binding SignOutCommand}" 
+                        Width="90"
+                        BorderThickness="0"
+                        Background="{x:Null}" 
+                        BorderBrush="{x:Null}" />
+                <Button x:Name="SettingsButton"
+                        Content="{x:Static local:StringResources.SettingsLabel}" 
+                        Command="{Binding ShowSettingsCommand}" 
+                        Width="90" 
+                        BorderThickness="0" 
+                        Background="{x:Null}" 
+                        BorderBrush="{x:Null}" />
+                <Button x:Name="PrintersButton" IsEnabled="{Binding SignedIn}" Content="{x:Static local:StringResources.PrintersLabel}" Command="{Binding ShowPrintersCommand}" Width="90" BorderThickness="0" Background="{x:Null}" BorderBrush="{x:Null}" />
+                <Button x:Name="ExitButton" Content="{x:Static local:StringResources.ExitLabel}" Click="ExitButton_Click"  Width="90" BorderThickness="0" Background="{x:Null}" BorderBrush="{x:Null}" />
+            </StackPanel>
+        </StackPanel>
+        <!-- Status grid -->
+        <DataGrid Grid.Row="1" x:Name="DocumentStatusDataGrid" ColumnWidth="*" HorizontalAlignment="Left" VerticalAlignment="Top" IsReadOnly="True" ItemsSource="{Binding DocumentStatuses}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static local:StringResources.ColumnNameLabel}" Binding="{Binding DocumentName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static local:StringResources.ColumnStatusLabel}" Binding="{Binding Status}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static local:StringResources.ColumnPrinterLabel}" Binding="{Binding PrinterName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static local:StringResources.ColumnSizeLabel}" Binding="{Binding Pages}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static local:StringResources.ColumnDateTimeLabel}" Binding="{Binding StatusDateTime}" SortDirection="Descending"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!-- Status bar -->
+        <StatusBar Grid.Row="2" DockPanel.Dock="Bottom" Style="{StaticResource StatusBarTextBlock}">
+            <StatusBarItem HorizontalAlignment="Left">
+                <TextBlock Name="StatusBarStatusMessage" Style="{StaticResource StatusBarStatusTextBlock}" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
