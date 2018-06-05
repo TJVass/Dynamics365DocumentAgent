@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ApplicationIDLabel" xml:space="preserve">
+    <value>Application ID</value>
+  </data>
+  <data name="AuthAccessDenied" xml:space="preserve">
+    <value>Access was denied. Ensure you are using the correct Email and Password. Click 'Sign In' to try again.</value>
+    <comment>Sign in error message.</comment>
+  </data>
+  <data name="AuthErrorDialogCaption" xml:space="preserve">
+    <value>Sign In Error</value>
+    <comment>Sign in error message dialog caption</comment>
+  </data>
+  <data name="AuthUserCancelled" xml:space="preserve">
+    <value>Authentication cancelled. Click 'Sign In' to try again.</value>
+    <comment>Sign in error message</comment>
+  </data>
+  <data name="AzureADTenantLabel" xml:space="preserve">
+    <value>Azure AD Tenant</value>
+  </data>
+  <data name="AzureClientIDLabel" xml:space="preserve">
+    <value>Azure Client ID</value>
+  </data>
+  <data name="CancelButtonLabel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CheckingForNextDocument" xml:space="preserve">
+    <value>Checking for next document</value>
+  </data>
+  <data name="ColumnDateTimeLabel" xml:space="preserve">
+    <value>Date / Time</value>
+  </data>
+  <data name="ColumnIdLabel" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="ColumnNameLabel" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ColumnPrinterLabel" xml:space="preserve">
+    <value>Printer</value>
+  </data>
+  <data name="ColumnPrinterNameLabel" xml:space="preserve">
+    <value>Printer name</value>
+  </data>
+  <data name="ColumnPrinterPathLabel" xml:space="preserve">
+    <value>Printer path</value>
+  </data>
+  <data name="ColumnSelectedLabel" xml:space="preserve">
+    <value>Selected</value>
+  </data>
+  <data name="ColumnSizeLabel" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="ColumnStatusLabel" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="DateTimeColumn" xml:space="preserve">
+    <value>DateTime</value>
+  </data>
+  <data name="DocumentRoutingAgentTask" xml:space="preserve">
+    <value>Document Routing Agent {0}</value>
+  </data>
+  <data name="DocumentRoutingAgentTitle" xml:space="preserve">
+    <value>Document Routing Agent</value>
+  </data>
+  <data name="DocumentRoutingAuthenticationTask" xml:space="preserve">
+    <value>Document Routing authentication {0}</value>
+  </data>
+  <data name="DocumentRoutingPrintersPageTask" xml:space="preserve">
+    <value>Document Routing Printers page {0}</value>
+  </data>
+  <data name="DocumentRoutingSettingsPageTask" xml:space="preserve">
+    <value>Document Routing Settings page {0}</value>
+  </data>
+  <data name="DynamicsAXUrlLabel" xml:space="preserve">
+    <value>Dynamics 365 URL</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>An error occurred</value>
+    <comment>Message box caption.</comment>
+  </data>
+  <data name="ExitLabel" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="NoActivePrinters" xml:space="preserve">
+    <value>There are no activated printers found.</value>
+  </data>
+  <data name="NotSignedIn" xml:space="preserve">
+    <value>Not signed in</value>
+  </data>
+  <data name="OKButtonLabel" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="PrinterPathEmptyError" xml:space="preserve">
+    <value>Printer path must not be empty.</value>
+  </data>
+  <data name="PrintersLabel" xml:space="preserve">
+    <value>Printers</value>
+  </data>
+  <data name="RedirectUriLabel" xml:space="preserve">
+    <value>Redirect URL</value>
+  </data>
+  <data name="RegisterPrintersError" xml:space="preserve">
+    <value>Error: Unable to register printers.</value>
+  </data>
+  <data name="RoutingNextDocument" xml:space="preserve">
+    <value>Routing the next document</value>
+  </data>
+  <data name="SettingsLabel" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SignedIn" xml:space="preserve">
+    <value>Signed in</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>Signing in</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="SignOutLabel" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
+  <data name="StringConcatenationFormatString" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="TaskStart" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="TaskStop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="UnableToSignIn" xml:space="preserve">
+    <value>Unable to sign in. Please update the settings.</value>
+  </data>
+  <data name="WaitingForNextDocument" xml:space="preserve">
+    <value>Waiting for next document ...</value>
+  </data>
+  <data name="LastCheckedFormatString" xml:space="preserve">
+    <value>Checking started: {0:hh:mm:ss}</value>
+  </data>
+  <data name="RunAsWindowsServiceCheckboxLabel" xml:space="preserve">
+    <value>Run as Windows Service</value>
+  </data>
+  <data name="RunAsWindowsServiceStatusBarMessage" xml:space="preserve">
+    <value>Documents being routed via Microsoft Dynamics 365 for Finance and Operations: Document Routing Service</value>
+  </data>
+  <data name="DocumentRoutingServiceNotRunning" xml:space="preserve">
+    <value>{0} is not running. It can be started from the Windows Services Administrative tool.</value>
+  </data>
+  <data name="FolderLabelLabel" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="NoWriteAccessError" xml:space="preserve">
+    <value>The active user does not have write access to the selected folder.</value>
+  </data>
+  <data name="PdfTargetFolderBrowseButtonLabel" xml:space="preserve">
+    <value>Browse ...</value>
+  </data>
+  <data name="PdfTargetFolderDirectoryDoesNotExist" xml:space="preserve">
+    <value>The target folder for PDF files does not exist.</value>
+  </data>
+  <data name="PdfTargetFolderGroupLabel" xml:space="preserve">
+    <value>Select the target folder for PDF files</value>
+  </data>
+  <data name="PdfTargetFolderRequiredError" xml:space="preserve">
+    <value>Target folder for PDF output is required when running as a Windows Service.</value>
+  </data>
+  <data name="QuestionBeforeClosing" xml:space="preserve">
+    <value>Document routing agent is currently checking for new or printing, would you like to wait?</value>
+  </data>
+  <data name="QuestionCaption" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="WindowIsWaitingToClose" xml:space="preserve">
+    <value>Document routing agent is busy and will be closed after current work is completed.</value>
+  </data>
+  <data name="InformationCaption" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="AgentVersionIsDifferent" xml:space="preserve">
+    <value>The agent version is different from the server platform version {0}.</value>
+  </data>
+  <data name="VersionCheckFailed" xml:space="preserve">
+    <value>Agent could not connect to Microsoft Dynamics 365 for Finance and Operations. Agent version check failed. </value>
+  </data>
+  <data name="AutoUnregisterDisconnectedPrintersLabel" xml:space="preserve">
+    <value>Automatic unregistering disconnected printers</value>
+  </data>
+  <data name="EventLogsLabel" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="ColumnLogDetailsLabel" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="ColumnLogLevelLabel" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="ColumnLogMessageLabel" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="ColumnLogTimeLabel" xml:space="preserve">
+    <value>Date and Time</value>
+  </data>
+  <data name="LoggedDaysCountLabel" xml:space="preserve">
+    <value>Logged:</value>
+  </data>
+  <data name="EventLogsTimeSpanItemLabel" xml:space="preserve">
+    <value>Last {0} day(s)</value>
+  </data>
+  <data name="ColumnLogKeywordsLabel" xml:space="preserve">
+    <value>Keywords</value>
+  </data>
+  <data name="ColumnLogOpcodeLabel" xml:space="preserve">
+    <value>Opcode</value>
+  </data>
+  <data name="ColumnLogTaskLabel" xml:space="preserve">
+    <value>Task</value>
+  </data>
+  <data name="LogKeywordsFilterLabel" xml:space="preserve">
+    <value>Keywords:</value>
+  </data>
+  <data name="LogLevelFilterLabel" xml:space="preserve">
+    <value>Level:</value>
+  </data>
+  <data name="SelectedLogDetailsLabel" xml:space="preserve">
+    <value>Selected log details:</value>
+  </data>
+  <data name="PrinterInstalledLabel" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="NoLabel" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="RegistedNotInstalledToolTip" xml:space="preserve">
+    <value>This previously registered printer is not in the list of installed printers on the current computer.</value>
+  </data>
+  <data name="YesLabel" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="EnableInAppLoggingViewCheckboxLabel" xml:space="preserve">
+    <value>Enable logging view in application</value>
+  </data>
+  <data name="EventChannelsLabel" xml:space="preserve">
+    <value>Channel:</value>
+  </data>
+  <data name="SearchLabel" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="AADInstanceUriLabel" xml:space="preserve">
+    <value>Azure AD Uri</value>
+  </data>
+</root>
